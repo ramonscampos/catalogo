@@ -1,0 +1,6 @@
+<resources>
+  <color name="splashscreen_bg">#3B4C68</color>
+  <color name="app_bg">#3B4C68</color>
+  <color name="primary_dark">#3B4C68</color>
+  <color name="status_bar_color">#3B4C68</color>
+</resources>
