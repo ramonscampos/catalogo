@@ -3,6 +3,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useCart } from 'hooks/cart';
 import React, { useMemo } from 'react';
 import { RootStackParamList } from 'routes/Types';
+import { formatCurrency } from 'shared/utils/string';
 
 import { Container, Quantity, CartContainer, CartImage, Total } from './styles';
 
@@ -19,10 +20,7 @@ const Footer = () => {
   }
 
   const formattedTotal = useMemo(() => {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
-    }).format(calcTotal());
+    return formatCurrency(calcTotal());
   }, [calcTotal]);
 
   return (

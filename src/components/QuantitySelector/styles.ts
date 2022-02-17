@@ -41,6 +41,7 @@ export const Quantity = styled.TextInput<SelectorProps>`
   align-items: center;
   background: ${({ theme }) => theme.colors.card_background};
   text-align: center;
+  padding: 0;
 `;
 
 export const AddButton = styled.TouchableOpacity<SelectorProps>`

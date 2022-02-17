@@ -7,6 +7,7 @@ import {
   ProductScreenNavigationProp,
   ProductScreenRouteProp,
 } from 'routes/Types';
+import { formatCurrency } from 'shared/utils/string';
 
 import {
   Container,
@@ -33,10 +34,7 @@ const Product = ({ navigation, route }: ProductProps) => {
   const [notes, setNotes] = useState('');
 
   const price = useMemo(() => {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
-    }).format(product.price);
+    return formatCurrency(product.price);
   }, [product.price]);
 
   function handleAddProduct() {
@@ -72,6 +70,7 @@ const Product = ({ navigation, route }: ProductProps) => {
           autoCorrect={false}
           value={notes}
           onChangeText={setNotes}
+          textAlignVertical="top"
         />
 
         <ButtonsContainer>

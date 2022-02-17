@@ -6,6 +6,7 @@ import { RootStackParamList } from 'routes/Types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useCart } from 'hooks/cart';
 import { Modal } from 'components/Modal';
+import { formatCurrency } from 'shared/utils/string';
 import {
   Container,
   Image,
@@ -31,10 +32,7 @@ const ProductCard = ({ product, isFromCart = false }: ProductCardProps) => {
   const { insertOrUpdateProduct, removeProduct } = useCart();
 
   const price = useMemo(() => {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
-    }).format(product.price);
+    return formatCurrency(product.price);
   }, [product.price]);
 
   function handleEnterProduct() {

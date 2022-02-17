@@ -1,8 +1,9 @@
 import { ifIphoneX } from 'react-native-iphone-x-helper';
 import { RFValue } from 'react-native-responsive-fontsize';
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 import SImage from 'react-native-scalable-image';
 import CartImg from 'assets/cart2.png';
+import { Platform } from 'react-native';
 
 export const Container = styled.View`
   background: ${({ theme }) => theme.colors.primary};
@@ -34,8 +35,18 @@ export const CartContainer = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   border-color: ${({ theme }) => theme.colors.border};
-  border-width: 0.5px;
-  box-shadow: 0px -2px 2px ${({ theme }) => theme.colors.card_shadow};
+  /* border-width: 0.5px; */
+
+  ${() => {
+    if (Platform.OS === 'android') {
+      return css`
+        elevation: 1;
+      `;
+    }
+    return css`
+      box-shadow: 0px -2px 2px ${({ theme }) => theme.colors.card_shadow};
+    `;
+  }}
 `;
 
 export const CartImage = styled(SImage).attrs({

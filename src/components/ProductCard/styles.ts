@@ -5,22 +5,21 @@ import { QuantitySelector as Selector } from 'components/QuantitySelector';
 import { Platform } from 'react-native';
 
 export const Container = styled.TouchableOpacity`
-  border-color: ${({ theme }) => theme.colors.border};
-  border-width: 0.5px;
   border-radius: 8px;
   padding: 15px;
   flex-direction: row;
   align-items: center;
   background: ${({ theme }) => theme.colors.card_background};
-  box-shadow: 3px 3px 2px ${({ theme }) => theme.colors.card_shadow};
 
   ${() => {
     if (Platform.OS === 'android') {
       return css`
-        elevation: 5;
+        elevation: 4;
       `;
     }
-    return '';
+    return css`
+      box-shadow: 3px 3px 2px ${({ theme }) => theme.colors.card_shadow};
+    `;
   }}
 
   margin: 0 5px 10px;

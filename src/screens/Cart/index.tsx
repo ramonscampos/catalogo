@@ -9,6 +9,7 @@ import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from 'routes/Types';
+import { formatCurrency } from 'shared/utils/string';
 import {
   Container,
   Title,
@@ -32,10 +33,7 @@ const Cart = () => {
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   const formattedTotal = useMemo(() => {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
-    }).format(calcTotal());
+    return formatCurrency(calcTotal());
   }, [calcTotal]);
 
   async function handleSendProduct() {

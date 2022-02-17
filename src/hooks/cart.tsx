@@ -27,11 +27,7 @@ interface CartContextData {
 
 const CartContext = createContext<CartContextData>({} as CartContextData);
 
-const CartProvider = ({
-  children,
-}: {
-  children: React.ReactNode;
-}): JSX.Element => {
+const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [cart, setCart] = useState<Cart>({} as Cart);
 
   useEffect(() => {
@@ -128,4 +124,4 @@ function useCart(): CartContextData {
   return context;
 }
 
-export { CartProvider, useCart };
+export { CartContext, CartProvider, useCart };
