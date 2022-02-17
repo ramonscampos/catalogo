@@ -18,5 +18,8 @@ yarn android
 
 iOS:
 ```
+cd ios && pod install && cd..
+```
+```
 yarn ios
 ```
