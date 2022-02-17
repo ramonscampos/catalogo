@@ -8,16 +8,18 @@ export default {
     darker: '#333',
     semiBlack: '#191919',
     black: '#000',
+    border: 'rgba(0,0,0,0.2)',
 
     danger: '#B51616',
     textColor: '#3B4C68',
+    inverted_text_color: '#FFFFFF',
 
-    primary: '#32D016',
-    secondary: '#1E2D44',
-  },
-  fonts: {
-    semibold: 'Poppins_600SemiBold',
-    medium: 'Poppins_500Medium',
-    bold: 'Poppins_700Bold',
+    primary: '#3B4C68',
+    secondary: '#6699FF',
+
+    card_shadow: 'rgba(0,0,0,0.2)',
+
+    screen_background: '#FFFFFF',
+    card_background: '#FFFFFF',
   },
 };

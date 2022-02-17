@@ -41,7 +41,10 @@
       "react/require-default-props": "off",
       "@typescript-eslint/no-empty-interface": "off",
       "react/prop-types": "off",
-      "react/function-component-definition": "off"
+      "react/function-component-definition": "off",
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "react/jsx-no-constructed-context-values": "off",
+      "no-plusplus": "off"
     },
     "settings": {
       "import/resolver": {

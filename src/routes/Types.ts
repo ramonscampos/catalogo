@@ -4,7 +4,7 @@ import { Product } from 'interfaces/product';
 
 export type RootStackParamList = {
   Home: undefined;
-  Product: { product: Product } | undefined;
+  Product: { product: Product };
   Cart: undefined;
 };
 

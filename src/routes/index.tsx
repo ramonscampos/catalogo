@@ -6,4 +6,4 @@ const Routes = (): JSX.Element => {
   return <AppRoutes />;
 };
 
-export default Routes;
+export { Routes };
